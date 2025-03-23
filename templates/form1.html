@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <h1>Форма для комментариев</h1>
+{#  novalidate  отключили проверку со стороны браузера    #}
+    <form action="" method="post" novalidate>
+    {% csrf_token %}
+        {% for one in form %}
+            <div>
+                {{ one.label }}
+                {{ one }}
+                {{ one.errors }}
+            </div>
+        {% endfor %}
+        <input type="submit" value="Отправить">
+    </form>
+    {% for one in coms %}
+    <div>
+        <h2>{{ one.name }}</h2>
+        <p>{{ one.text }}</p>
+        <p>{{ one.time }}</p>
+    </div>
+    {% endfor %}
+{% endblock %}

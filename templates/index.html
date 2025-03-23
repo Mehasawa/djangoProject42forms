@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <title>HOME</title>
+    {% endblock %}
+</head>
+<body>
+    {% block menu %}
+        <ul>
+        <li>
+            <a href="{% url 'home' %}">Главная</a>
+        </li>
+          <li>
+            <a href="{% url 'form1' %}">Форма1</a>
+        </li>
+          <li>
+            <a href="{% url 'form2' %}">Форма2</a>
+        </li>
+        </ul>
+    {% endblock %}
+    
+    {% block content %}
+        <h1>Главная страница</h1>
+    {% endblock %}
+</body>
+</html>
