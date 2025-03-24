@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+{% block content %}
+<h1>Ваш заказ</h1>
+    Пицца {{ new.eda }}
+    <h3>Дополнительно:</h3>
+{#    {{ new.dopTomato }}#}
+{#    {{ new.dopCheese}}#}
+{#    {{ new.dopKolbasa }}#}
+    {% if new.dopTomato %}
+    <p>Помидоры</p>
+    {% endif %}
+     {% if new.dopCheese %}
+    <p>Сыр</p>
+    {% endif %}
+     {% if new.dopKolbasa %}
+    <p>Колбаса</p>
+    {% endif %}
+    {% if not new.dopTomato and not new.dopCheese and not new.dopKolbasa %}
+        <p>нет</p>
+    {% endif %}
+    <h3>Ваше имя {{ new.name }}</h3>   
+    <h3>Ваш телефон {{ new.tel }}</h3>
+{% endblock %}

@@ -2,5 +2,15 @@
 
 {% block content %}
     <h1>Форма для выбора</h1>
-    
+     <form action="" method="post" novalidate>
+    {% csrf_token %}
+        {% for one in form %}
+            <div>
+                {{ one.label }}
+                {{ one }}
+                {{ one.errors }}
+            </div>
+        {% endfor %}
+        <input type="submit" value="Заказать">
+    </form>
 {% endblock %}
